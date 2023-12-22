@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './App.css';
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame, MeshProps  } from '@react-three/fiber'
 
 type Props = {
   position?: number[];
@@ -8,8 +8,16 @@ type Props = {
 }
 
 const Box = (props: Props) => {
+  const ref = useRef<MeshProps>()
+
+  useFrame((_, delta) => {
+    if( !ref.current) return
+    ref.current.rotation.x += 1 * delta
+    ref.current.rotation.y += 0.5 * delta
+  })
+
   return (
-    <mesh {...props}>
+    <mesh {...props} ref={ref}>
       <boxGeometry />
       <meshBasicMaterial color={0x00ff00} wireframe />
     </mesh>
