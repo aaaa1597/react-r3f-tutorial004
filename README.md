@@ -1,5 +1,5 @@
 # react-r3f-tutorial004
-React +TypescriptのWebアプリで、React Three Fiberのtutorialその4。
+React +TypescriptのWebアプリで、React Three Fiberのtutorialその5。
 「useFrame」を使うと、30～60fpsになるようにいい感じに呼ばれるんだと。便利ね～。<br />
 そのサンプル。<br />
 
