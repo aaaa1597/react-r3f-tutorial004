@@ -3,11 +3,6 @@ import './App.css';
 import { Canvas, useFrame, MeshProps  } from '@react-three/fiber'
 import * as THREE from 'three'
 
-type Props = {
-  position?: number[];
-  name?: string;
-}
-
 const Box = (props: MeshProps) => {
   const ref = useRef<THREE.Mesh>(null!)
 
